@@ -1,0 +1,164 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  /* Brand palette — calibrated, less neon, more editorial */
+  --color-brand-50:  #F1F7F2;
+  --color-brand-100: #DDECDF;
+  --color-brand-200: #BBD9C0;
+  --color-brand-300: #88BC94;
+  --color-brand-400: #519A6A;
+  --color-brand-500: #2F7F4B;
+  --color-brand-600: #21663A;
+  --color-brand-700: #1A5230;
+  --color-brand-800: #154025;
+  --color-brand-900: #0E2E1B;
+
+  --color-harvest-50:  #FFF8EB;
+  --color-harvest-100: #FFEBC2;
+  --color-harvest-200: #FFD581;
+  --color-harvest-300: #F2B441;
+  --color-harvest-400: #DE9722;
+  --color-harvest-500: #B97B0E;
+  --color-harvest-600: #8F5F08;
+
+  --color-soil-50:  #FAF6EE;
+  --color-soil-100: #F1E9D6;
+  --color-soil-200: #E0D0AA;
+  --color-soil-300: #C7B176;
+  --color-soil-400: #A38A4F;
+  --color-soil-500: #6F5C30;
+
+  --color-ink-900: #0E1A12;
+  --color-ink-800: #15251A;
+  --color-ink-700: #233324;
+  --color-ink-600: #475148;
+  --color-ink-500: #6B756C;
+  --color-ink-400: #9CA29D;
+
+  /* Warm, paper-like surfaces — feels less template */
+  --color-surface:         #F7F5EE;
+  --color-surface-elevated:#FFFFFF;
+  --color-surface-muted:   #EFEBE0;
+  --color-surface-deep:    #E7E2D2;
+
+  /* Typography */
+  --font-display: 'Poppins', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --font-serif:   'Fraunces', Georgia, serif;
+  --font-sans:    'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
+
+  /* Radii */
+  --radius-xs: 6px;
+  --radius-sm: 10px;
+  --radius-md: 14px;
+  --radius-lg: 20px;
+  --radius-xl: 28px;
+  --radius-2xl: 36px;
+
+  /* Softer, layered shadows for elevated cards */
+  --shadow-soft: 0 1px 2px rgba(15, 35, 22, 0.04), 0 6px 18px -8px rgba(15, 35, 22, 0.10);
+  --shadow-card: 0 4px 12px -4px rgba(15, 35, 22, 0.08), 0 24px 40px -20px rgba(15, 35, 22, 0.18);
+  --shadow-photo: 0 30px 60px -30px rgba(15, 35, 22, 0.35), 0 12px 24px -12px rgba(15, 35, 22, 0.18);
+}
+
+html,
+body,
+#root {
+  min-height: 100%;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-sans);
+  background-color: var(--color-surface);
+  color: var(--color-ink-900);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+/* Base layer so Tailwind utility classes (text-white, text-brand-700) win over these defaults */
+@layer base {
+  h1, h2, h3, h4, h5 {
+    font-family: var(--font-display);
+    letter-spacing: -0.025em;
+    color: var(--color-ink-900);
+  }
+}
+
+/* Editorial serif accent — used sparingly for italic emphasis */
+.font-serif-accent {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-weight: 500;
+  letter-spacing: -0.015em;
+}
+
+::selection {
+  background: var(--color-brand-200);
+  color: var(--color-brand-900);
+}
+
+:where(a, button, [role="button"], input, select, textarea, summary):focus-visible {
+  outline: 2px solid var(--color-brand-500);
+  outline-offset: 2px;
+  border-radius: 6px;
+}
+
+/* Subtle paper grain — adds texture without looking like a CSS demo */
+.bg-paper {
+  background-color: var(--color-surface);
+  background-image:
+    radial-gradient(rgba(21, 64, 37, 0.025) 1px, transparent 1px);
+  background-size: 18px 18px;
+}
+
+/* Marquee */
+@keyframes scroll-x {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+.animate-marquee {
+  animation: scroll-x 45s linear infinite;
+}
+.animate-marquee:hover { animation-play-state: paused; }
+
+/* Float */
+@keyframes float-y {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(-6px); }
+}
+.animate-float { animation: float-y 7s ease-in-out infinite; }
+
+@keyframes fade-up {
+  from { opacity: 0; transform: translateY(12px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.animate-fade-up { animation: fade-up 700ms ease-out both; }
+
+/* Soft photo treatment — gentle warm overlay for better text contrast */
+.photo-treatment {
+  position: relative;
+  isolation: isolate;
+}
+.photo-treatment::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(14, 26, 18, 0) 50%, rgba(14, 26, 18, 0.35) 100%);
+  pointer-events: none;
+  border-radius: inherit;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
