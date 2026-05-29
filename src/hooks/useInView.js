@@ -10,8 +10,8 @@ export default function useInView({ threshold = 0.15, rootMargin = '0px 0px -10%
 
     // Respect reduced motion — show immediately
     if (typeof window !== 'undefined' && window.matchMedia?.('(prefers-reduced-motion: reduce)').matches) {
-      setInView(true)
-      return
+      const frame = requestAnimationFrame(() => setInView(true))
+      return () => cancelAnimationFrame(frame)
     }
 
     const obs = new IntersectionObserver(

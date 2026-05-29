@@ -16,7 +16,7 @@ import Container from '../components/ui/Container.jsx'
 import Button from '../components/ui/Button.jsx'
 import ProductCard from '../components/ProductCard.jsx'
 import CtaBanner from '../components/sections/CtaBanner.jsx'
-import { products, getProductBySlug, slug, categoryLabel } from '../data/products.js'
+import { products, getProductBySlug, categoryLabel } from '../data/products.js'
 
 const categoryDot = {
   insecticide: 'bg-brand-500',
@@ -101,7 +101,7 @@ export default function ProductDetail() {
               <Button to="/contact" variant="primary" size="lg" iconRight={FaArrowRight}>
                 Request a quote
               </Button>
-              <Button href="tel:+911234567890" variant="outline" size="lg" icon={FaPhoneAlt}>
+              <Button href="tel:+919760302690" variant="outline" size="lg" icon={FaPhoneAlt}>
                 Call sales
               </Button>
             </div>

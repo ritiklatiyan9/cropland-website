@@ -34,7 +34,7 @@ export default function Solutions() {
                 to={`/products#${s.id}`}
                 className="group relative flex h-full flex-col overflow-hidden rounded-2xl bg-white shadow-soft ring-1 ring-black/4 transition-all duration-300 hover:-translate-y-1 hover:shadow-card sm:rounded-3xl"
               >
-                <div className="relative aspect-5/4 overflow-hidden">
+                <div className="relative aspect-16/10 overflow-hidden">
                   <img
                     src={s.image}
                     alt=""
@@ -46,25 +46,16 @@ export default function Solutions() {
                   </span>
                 </div>
 
-                <div className="flex flex-1 flex-col p-4 sm:p-6">
+                <div className="flex flex-1 flex-col p-4 sm:p-5">
                   <h3 className="font-display text-base font-bold text-ink-900 sm:text-xl">{s.title}</h3>
                   <p className="mt-1 hidden text-[11px] font-semibold uppercase tracking-wider text-brand-700 sm:block">
                     {s.tag}
                   </p>
-                  <p className="mt-2 line-clamp-3 text-[13px] leading-relaxed text-ink-600 sm:mt-3 sm:line-clamp-none sm:text-sm">
+                  <p className="mt-2 line-clamp-2 text-[13px] leading-relaxed text-ink-600 sm:mt-2.5 sm:text-sm">
                     {s.description}
                   </p>
 
-                  <ul className="mt-4 hidden space-y-1.5 text-sm text-ink-700 sm:block">
-                    {s.points.map((p) => (
-                      <li key={p} className="flex items-start gap-2">
-                        <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-brand-500" aria-hidden="true" />
-                        {p}
-                      </li>
-                    ))}
-                  </ul>
-
-                  <span className="mt-4 inline-flex items-center gap-1.5 text-[13px] font-semibold text-brand-800 sm:mt-6 sm:text-sm">
+                  <span className="mt-3 inline-flex items-center gap-1.5 text-[13px] font-semibold text-brand-800 sm:mt-4 sm:text-sm">
                     View range
                     <FaArrowRight className="text-[10px] transition-transform duration-300 group-hover:translate-x-1 sm:text-xs" aria-hidden="true" />
                   </span>

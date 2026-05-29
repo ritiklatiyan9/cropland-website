@@ -1,4 +1,4 @@
-import { FaArrowRight, FaPlay, FaLeaf, FaShieldAlt, FaCheckCircle } from 'react-icons/fa'
+import { FaArrowRight, FaCheckCircle, FaLeaf, FaSeedling, FaWhatsapp } from 'react-icons/fa'
 import Container from '../ui/Container.jsx'
 import Button from '../ui/Button.jsx'
 import { img } from '../../data/images.js'
@@ -6,51 +6,64 @@ import { img } from '../../data/images.js'
 const heroStats = [
   { v: '25+', l: 'Years on Indian farms' },
   { v: '120+', l: 'Registered formulations' },
-  { v: '18', l: 'States · Pan-India' },
+  { v: '18', l: 'States served' },
 ]
+
+const heroChecks = ['Trusted by growers', 'Modern product catalogue', 'Residue-aware usage']
 
 export default function Hero() {
   return (
-    <section className="relative isolate overflow-hidden bg-ink-900 text-white">
+    <section className="relative isolate flex min-h-[calc(100svh-4.5rem)] items-center overflow-hidden bg-ink-900 text-white">
       {/* Full-bleed background photograph */}
       <img
         src={img.heroWide}
         alt=""
         loading="eager"
         fetchpriority="high"
-        className="absolute inset-0 -z-10 h-full w-full object-cover object-right"
+        className="absolute inset-0 -z-20 h-full w-full scale-105 object-cover object-center"
       />
 
-      {/* Desktop gradient — heavy on left, fades to reveal the field on right */}
+      {/* Layered overlays — depth + legibility */}
       <div
-        className="absolute inset-0 -z-10 hidden bg-linear-to-r from-ink-900 from-10% via-ink-900/85 via-45% to-ink-900/10 lg:block"
+        className="absolute inset-0 -z-10 bg-linear-to-t from-ink-900 from-15% via-ink-900/70 via-55% to-ink-900/45"
         aria-hidden="true"
       />
-      {/* Mobile gradient — heavy bottom-to-top for full-width text legibility */}
+      {/* Centered vignette for text legibility */}
       <div
-        className="absolute inset-0 -z-10 bg-linear-to-t from-ink-900 from-30% via-ink-900/80 to-ink-900/60 lg:hidden"
+        className="absolute inset-0 -z-10 bg-[radial-gradient(120%_120%_at_50%_50%,transparent_30%,rgba(14,26,18,0.6)_100%)]"
+        aria-hidden="true"
+      />
+      {/* Warm brand glow accent */}
+      <div
+        className="absolute -bottom-24 left-1/4 -z-10 h-96 w-96 rounded-full bg-brand-500/20 blur-3xl"
         aria-hidden="true"
       />
 
-      <Container className="relative grid items-center gap-12 py-14 sm:py-20 lg:grid-cols-12 lg:gap-10 lg:py-32">
-        {/* Left — copy */}
-        <div className="lg:col-span-7">
-          <span className="inline-flex animate-fade-up items-center gap-2 rounded-full border border-white/20 bg-white/10 px-3 py-1.5 text-[10px] font-semibold uppercase tracking-[0.18em] text-brand-100 backdrop-blur sm:text-xs">
+      <Container className="relative flex w-full flex-col py-14 sm:py-16 lg:py-20">
+        {/* Full-width copy */}
+        <div className="flex w-full flex-col">
+          <span className="inline-flex w-fit animate-fade-up items-center gap-2 rounded-full border border-white/20 bg-white/10 px-3 py-1.5 text-[10px] font-semibold uppercase tracking-[0.18em] text-brand-100 backdrop-blur sm:text-xs">
             <span className="relative flex h-2 w-2">
               <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-brand-300 opacity-75" />
               <span className="relative inline-flex h-2 w-2 rounded-full bg-brand-300" />
             </span>
-            CIB&amp;RC · ISO 9001 · GMP
+            Crop protection · Nutrition · Bio-solutions
           </span>
 
-          <h1 className="mt-5 font-display text-[2.25rem] font-bold leading-[1.02] tracking-tight text-white sm:mt-6 sm:text-6xl lg:text-[5rem]">
+          <h1 className="mt-5 font-display text-[2.6rem] font-bold leading-[0.95] tracking-tight text-white drop-shadow-sm sm:text-7xl lg:text-[6rem] xl:text-[7rem]">
             CROPLAND AGRITECH
-            <br />
-            <span className="font-serif-accent text-harvest-200">for every Indian farmer.</span>
+            <span className="mt-2 block font-serif-accent text-[2.1rem] font-medium text-harvest-200 sm:text-5xl lg:text-[3.5rem]">
+              for every Indian farmer.
+            </span>
           </h1>
 
-          <ul className="mt-5 flex flex-wrap gap-x-5 gap-y-2 text-[13px] text-brand-100 sm:mt-7 sm:gap-x-6 sm:text-sm">
-            {['Trusted by 500K+ growers', '120+ formulations', 'Export-grade residue'].map((t) => (
+          <p className="mt-6 max-w-3xl text-base leading-relaxed text-brand-100/90 sm:text-lg">
+            Crop protection, plant nutrition and bio-solutions — with practical
+            guidance for growers, retailers and distributors.
+          </p>
+
+          <ul className="mt-6 flex flex-wrap gap-x-5 gap-y-2.5 text-[13px] font-medium text-brand-100 sm:gap-x-6 sm:text-sm">
+            {heroChecks.map((t) => (
               <li key={t} className="inline-flex items-center gap-2">
                 <FaCheckCircle className="shrink-0 text-brand-300" aria-hidden="true" />
                 {t}
@@ -58,84 +71,38 @@ export default function Hero() {
             ))}
           </ul>
 
-          <div className="mt-7 flex flex-wrap items-center gap-3 sm:mt-9">
+          <div className="mt-8 flex flex-wrap items-center gap-3">
             <Button to="/products" variant="cta" size="lg" iconRight={FaArrowRight}>
               Explore Products
             </Button>
-            <Button to="/research" variant="white" size="lg" icon={FaPlay}>
-              See how we make it
+            <Button to="/contact" variant="white" size="lg" icon={FaWhatsapp}>
+              WhatsApp enquiry
             </Button>
           </div>
 
-          {/* Inline stats — clean, no boxes, white type on dark */}
-          <dl className="mt-10 grid grid-cols-3 gap-x-4 gap-y-6 border-t border-white/10 pt-6 sm:mt-14 sm:flex sm:flex-wrap sm:gap-x-10 sm:pt-8">
+          {/* Inline stats */}
+          <dl className="mt-9 grid grid-cols-3 gap-x-4 gap-y-5 border-t border-white/15 pt-6 sm:flex sm:flex-wrap sm:gap-x-12">
             {heroStats.map((s) => (
               <div key={s.l}>
-                <dt className="font-display text-2xl font-bold tracking-tight text-white sm:text-3xl lg:text-4xl">
+                <dt className="font-display text-2xl font-bold tracking-tight text-white sm:text-4xl">
                   {s.v}
                 </dt>
-                <dd className="mt-0.5 text-[10px] font-medium text-brand-100/80 sm:text-xs">{s.l}</dd>
+                <dd className="mt-1 text-[10px] font-medium leading-tight text-brand-100/70 sm:text-xs">
+                  {s.l}
+                </dd>
               </div>
             ))}
           </dl>
         </div>
 
-        {/* Right — floating chips overlaid on the visible field area (desktop only) */}
-        <div className="relative hidden lg:col-span-5 lg:block">
-          <div className="relative mx-auto h-[28rem] w-full max-w-md">
-            <div className="absolute right-0 top-4 w-64 rounded-2xl bg-white/95 p-5 text-ink-900 shadow-card backdrop-blur ring-1 ring-black/4 animate-float">
-              <div className="flex items-center justify-between">
-                <span className="inline-flex items-center gap-1.5 rounded-full bg-brand-50 px-2.5 py-1 text-[10px] font-semibold uppercase tracking-wider text-brand-800">
-                  <FaLeaf className="text-[10px]" aria-hidden="true" /> Live field data
-                </span>
-                <span className="rounded-full bg-harvest-200 px-2 py-0.5 text-[10px] font-bold text-harvest-600">
-                  Kharif &apos;26
-                </span>
-              </div>
-              <p className="mt-4 text-[11px] font-semibold uppercase tracking-wider text-ink-500">
-                Avg. yield uplift
-              </p>
-              <p className="mt-1 font-display text-4xl font-bold tracking-tight text-ink-900">
-                +18<span className="text-2xl text-ink-500">%</span>
-              </p>
-              <p className="mt-2 text-xs leading-snug text-ink-600">
-                Across cotton plots on Cropland&apos;s integrated program
-              </p>
-            </div>
-
-            <div
-              className="absolute -left-2 top-44 flex items-center gap-3 rounded-2xl bg-white/95 p-3 pr-4 text-ink-900 shadow-card ring-1 ring-black/4 backdrop-blur animate-float"
-              style={{ animationDelay: '1.2s' }}
-            >
-              <span className="grid h-11 w-11 place-items-center rounded-xl bg-brand-50 text-brand-700">
-                <FaShieldAlt aria-hidden="true" />
-              </span>
-              <div>
-                <p className="text-[10px] font-semibold uppercase tracking-wider text-ink-500">Residue</p>
-                <p className="text-sm font-bold text-ink-900">Export-grade</p>
-              </div>
-            </div>
-
-            <div className="absolute bottom-6 right-4 flex items-center gap-3 rounded-2xl bg-ink-800/85 p-3 pr-4 shadow-card ring-1 ring-white/10 backdrop-blur">
-              <div className="flex -space-x-2">
-                {[img.farmer1, img.farmer2, img.farmer3].map((src, i) => (
-                  <img
-                    key={i}
-                    src={src}
-                    alt=""
-                    loading="lazy"
-                    className="h-9 w-9 rounded-full border-2 border-ink-800 object-cover"
-                  />
-                ))}
-              </div>
-              <div>
-                <p className="font-display text-base font-bold text-white">500K+</p>
-                <p className="text-[11px] font-medium text-brand-100/80">Indian growers</p>
-              </div>
-            </div>
-          </div>
-        </div>
+      
       </Container>
+
+      {/* Bottom fade into next section */}
+      <div
+        className="pointer-events-none absolute inset-x-0 bottom-0 h-24 bg-linear-to-t from-ink-900 to-transparent"
+        aria-hidden="true"
+      />
     </section>
   )
 }

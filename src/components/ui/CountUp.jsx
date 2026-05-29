@@ -11,8 +11,8 @@ export default function CountUp({ to = 0, duration = 1400, prefix = '', suffix =
   useEffect(() => {
     if (!inView) return
     if (typeof window !== 'undefined' && window.matchMedia?.('(prefers-reduced-motion: reduce)').matches) {
-      setValue(to)
-      return
+      frame.current = requestAnimationFrame(() => setValue(to))
+      return () => cancelAnimationFrame(frame.current)
     }
     const start = performance.now()
     const tick = (now) => {

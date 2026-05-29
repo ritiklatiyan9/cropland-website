@@ -110,7 +110,7 @@ export default function LegalPage({ title, updated, intro, sections, activePath 
                   <a href="mailto:compliance@croplandagritech.in" className="font-semibold text-brand-800 hover:underline">
                     compliance@croplandagritech.in
                   </a>{' '}
-                  or call <a href="tel:+911234567890" className="font-semibold text-brand-800 hover:underline">+91 1234 567 890</a>.
+                  or call <a href="tel:+919760302690" className="font-semibold text-brand-800 hover:underline">+91 97603 02690</a>.
                 </div>
               </div>
             </article>

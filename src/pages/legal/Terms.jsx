@@ -58,7 +58,7 @@ const sections = [
   {
     heading: '9. Governing law',
     body: [
-      'These Terms are governed by the laws of India. Any dispute arising out of or in connection with this Site or our products shall be subject to the exclusive jurisdiction of the courts at Ahmedabad, Gujarat.',
+      'These Terms are governed by the laws of India. Any dispute arising out of or in connection with this Site or our products shall be subject to the exclusive jurisdiction of the courts at Muzaffarnagar, Uttar Pradesh.',
     ],
   },
   {

@@ -39,7 +39,7 @@ export default function CtaBanner() {
                 <Button to="/contact" variant="cta" size="lg" iconRight={FaArrowRight} className="w-full justify-center">
                   Apply to distribute
                 </Button>
-                <Button href="tel:+911234567890" variant="white" size="lg" icon={FaPhoneAlt} className="w-full justify-center">
+                <Button href="tel:+919760302690" variant="white" size="lg" icon={FaPhoneAlt} className="w-full justify-center">
                   Talk to sales
                 </Button>
               </div>

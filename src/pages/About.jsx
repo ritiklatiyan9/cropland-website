@@ -1,4 +1,15 @@
-import { FaLeaf, FaHandshake, FaShieldAlt, FaFlask, FaArrowRight, FaCheckCircle } from 'react-icons/fa'
+import {
+  FaArrowRight,
+  FaFlask,
+  FaHandshake,
+  FaLeaf,
+  FaMapMarkerAlt,
+  FaRecycle,
+  FaSeedling,
+  FaShieldAlt,
+  FaTruck,
+  FaUsers,
+} from 'react-icons/fa'
 import Container from '../components/ui/Container.jsx'
 import Button from '../components/ui/Button.jsx'
 import Reveal from '../components/ui/Reveal.jsx'
@@ -7,133 +18,196 @@ import CtaBanner from '../components/sections/CtaBanner.jsx'
 import { img } from '../data/images.js'
 
 const values = [
-  { icon: FaLeaf, title: 'Soil-first', text: 'Every product is tuned to leave the soil microbiome stronger than we found it.' },
-  { icon: FaShieldAlt, title: 'Safety, always', text: 'Operator, consumer, environment — three audits before a label gets approved.' },
-  { icon: FaFlask, title: 'Science, on farm', text: 'No claim ships without zonal field-trial data, replicated across seasons.' },
-  { icon: FaHandshake, title: 'Farmer-led', text: 'Agronomists co-design programs alongside growers, not from a head office.' },
+  { icon: FaSeedling, title: 'Farm-first advice', text: 'Recommendations start with crop stage, weather, pest pressure and grower constraints.' },
+  { icon: FaFlask, title: 'Formulation discipline', text: 'Products are selected for tank usability, residue windows and real spray conditions.' },
+  { icon: FaShieldAlt, title: 'Responsible protection', text: 'Labels, PPE guidance and re-entry intervals stay connected to product decisions.' },
+  { icon: FaHandshake, title: 'Dealer partnership', text: 'Retailers and distributors get practical product support, not just cartons.' },
 ]
 
-const milestones = [
-  { year: '2000', title: 'Founded in Ahmedabad', text: 'Started as a regional formulator focused on cotton and groundnut belts.' },
-  { year: '2008', title: 'CIB&RC scale-up', text: 'Crossed 25 registered formulations across protection and nutrition.' },
-  { year: '2014', title: 'GMP facility', text: 'Commissioned a 40,000 MT/year manufacturing block with effluent ZLD.' },
-  { year: '2019', title: 'Bio-Solutions launch', text: 'Bio-pesticide and bio-fertilizer range, co-developed with two ICAR institutes.' },
-  { year: '2024', title: 'Pan-India network', text: '1,800+ distributors across 18 states; export to 11 countries.' },
+const capabilities = [
+  { icon: FaLeaf, title: 'Crop programs', text: 'Season-wise protection and nutrition plans for local crop belts.' },
+  { icon: FaUsers, title: 'Grower support', text: 'Field issue intake through WhatsApp, call and dealer networks.' },
+  { icon: FaTruck, title: 'Reliable supply', text: 'Category-led catalogue for recurring seasonal requirements.' },
+  { icon: FaRecycle, title: 'Stewardship', text: 'Residue-aware use guidance and responsible application support.' },
 ]
 
-const leadership = [
-  { name: 'Vikram Mehta',  role: 'Founder & Managing Director', avatar: img.farmer2 },
-  { name: 'Anita Iyer',    role: 'Chief Scientist · R&D',       avatar: img.farmer3 },
-  { name: 'Rohit Sharma',  role: 'Head of Operations',          avatar: img.farmer1 },
+const numbers = [
+  { v: 25, suffix: '+', label: 'Years of field experience' },
+  { v: 120, suffix: '+', label: 'Formulation options' },
+  { v: 18, suffix: '', label: 'States served' },
+  { v: 14, suffix: '', label: 'Trial zones referenced' },
 ]
 
-const facilityHighlights = [
-  '40,000 MT/year formulation capacity',
-  'Zero-liquid-discharge effluent system',
-  'In-house analytical & micro labs',
-  'GMP-certified bulk storage',
-  'Solar + grid hybrid power',
-  '24×7 stewardship helpline',
+const timeline = [
+  { year: '2000', title: 'Field-first beginnings', text: 'Started with crop protection recommendations shaped by dealer feedback and grower problems.' },
+  { year: '2008', title: 'Product range expansion', text: 'Built a wider catalogue across insecticides, herbicides, fungicides and crop nutrition.' },
+  { year: '2014', title: 'Quality-led operations', text: 'Strengthened formulation selection, batch consistency and practical label guidance.' },
+  { year: '2019', title: 'Bio-solutions focus', text: 'Added biological and soil-support products for residue-aware crop programs.' },
+  { year: '2026', title: 'Pinna support desk', text: 'Website enquiries now route into WhatsApp so growers and dealers can share crop details quickly.' },
 ]
 
 export default function About() {
   return (
     <>
-      {/* Hero */}
-      <section className="relative border-b border-brand-100 bg-surface">
-        <Container className="grid items-center gap-12 py-14 sm:py-20 lg:grid-cols-12 lg:gap-16 lg:py-24">
+      <section className="relative isolate overflow-hidden bg-ink-900 text-white">
+        <img
+          src={img.heroFarmer}
+          alt=""
+          loading="eager"
+          className="absolute inset-0 -z-20 h-full w-full object-cover object-center"
+        />
+        <div className="absolute inset-0 -z-10 hidden bg-linear-to-r from-ink-900 from-10% via-ink-900/85 via-55% to-ink-900/20 lg:block" aria-hidden="true" />
+        <div className="absolute inset-0 -z-10 bg-linear-to-t from-ink-900 from-20% via-ink-900/80 to-ink-900/60 lg:hidden" aria-hidden="true" />
+
+        <Container className="grid items-center gap-10 py-16 sm:py-20 lg:grid-cols-12 lg:gap-14 lg:py-24">
           <Reveal className="lg:col-span-7">
-            <span className="text-xs font-semibold uppercase tracking-[0.2em] text-brand-700">About Cropland</span>
-            <h1 className="mt-3 font-display text-4xl font-bold leading-[1.05] tracking-tight text-ink-900 sm:text-5xl lg:text-6xl">
-              A quarter-century of growing
-              with <span className="font-serif-accent text-brand-700">Indian agriculture.</span>
+            <span className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/10 px-3 py-1.5 text-[11px] font-semibold uppercase tracking-[0.18em] text-brand-100 backdrop-blur">
+              <FaLeaf className="text-brand-300" aria-hidden="true" />
+              About Cropland
+            </span>
+            <h1 className="mt-5 max-w-4xl font-display text-[2.35rem] font-bold leading-[1.02] tracking-tight text-white sm:text-6xl lg:text-[5rem]">
+              Built close to the field,
+              <span className="block font-serif-accent text-harvest-200">not far from it.</span>
             </h1>
-            <p className="mt-5 max-w-xl text-lg leading-relaxed text-ink-600">
-              We started on a single bench in Ahmedabad with a stubborn idea:
-              agricultural inputs should be honest, science-backed and built
-              around the people who actually farm. Twenty-five years on, that
-              idea still runs the company.
+            <p className="mt-5 max-w-2xl text-base leading-relaxed text-brand-100 sm:text-lg">
+              Cropland Agritech brings crop protection, nutrition and bio-solution
+              guidance together for growers, dealers and distributors who need
+              practical answers during the season.
             </p>
-            <div className="mt-7 flex flex-wrap gap-3">
-              <Button to="/research" variant="primary" size="lg" iconRight={FaArrowRight}>Our research</Button>
-              <Button to="/contact" variant="outline" size="lg">Talk to us</Button>
+            <div className="mt-7 flex flex-wrap gap-3 sm:mt-9">
+              <Button to="/products" variant="cta" size="lg" iconRight={FaArrowRight}>
+                Explore products
+              </Button>
+              <Button to="/contact" variant="white" size="lg">
+                Talk to us
+              </Button>
             </div>
           </Reveal>
 
-          <Reveal delay={120} className="relative lg:col-span-5">
-            <div className="relative mx-auto aspect-4/5 w-full max-w-md">
-              <div className="absolute -left-4 -top-4 h-full w-full rounded-4xl bg-brand-700" aria-hidden="true" />
-              <div className="photo-treatment relative h-full w-full overflow-hidden rounded-4xl bg-brand-100 shadow-photo">
-                <img
-                  src={img.heroFarmer}
-                  alt="Cropland team with farmers in the field"
-                  loading="eager"
-                  className="h-full w-full object-cover"
-                />
+          <Reveal delay={120} className="lg:col-span-5">
+            <div className="rounded-2xl border border-white/15 bg-white/10 p-5 shadow-card backdrop-blur-xl">
+              <div className="flex items-start gap-3">
+                <span className="grid h-11 w-11 shrink-0 place-items-center rounded-full bg-brand-300/20 text-brand-100">
+                  <FaMapMarkerAlt aria-hidden="true" />
+                </span>
+                <div>
+                  <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-brand-100/80">
+                    Local base
+                  </p>
+                  <h2 className="mt-1 font-display text-2xl font-bold text-white">Pinna, Muzaffarnagar</h2>
+                  <p className="mt-2 text-sm leading-relaxed text-brand-100/80">
+                    Uttar Pradesh 251001, positioned for fast communication with
+                    growers, dealers and regional field teams.
+                  </p>
+                </div>
               </div>
-              <div className="absolute -right-3 bottom-8 rounded-2xl bg-white p-5 shadow-card ring-1 ring-black/4">
-                <p className="font-display text-3xl font-bold text-ink-900">
-                  <CountUp to={500} suffix="K+" />
-                </p>
-                <p className="mt-0.5 max-w-40 text-xs leading-snug text-ink-500">Farmer touchpoints every season</p>
-              </div>
-              <div className="absolute -left-2 top-10 rounded-full bg-white px-3.5 py-2 text-xs font-semibold text-ink-800 shadow-card ring-1 ring-black/4">
-                <span className="text-brand-700">●</span> 18 states · 11 export markets
+              <div className="mt-5 grid grid-cols-2 gap-3 border-t border-white/10 pt-5">
+                <div>
+                  <p className="font-display text-3xl font-bold text-white">24h</p>
+                  <p className="mt-1 text-xs text-brand-100/70">WhatsApp intake</p>
+                </div>
+                <div>
+                  <p className="font-display text-3xl font-bold text-white">4</p>
+                  <p className="mt-1 text-xs text-brand-100/70">Core categories</p>
+                </div>
               </div>
             </div>
           </Reveal>
         </Container>
       </section>
 
-      {/* Numbers strip */}
-      <section className="border-b border-brand-100 bg-surface-muted py-10">
+      <section className="border-b border-brand-100 bg-surface py-8 sm:py-10">
         <Container>
-          <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
-            {[
-              { v: 25,   suffix: '+',  l: 'Years in Indian agriculture' },
-              { v: 120,  suffix: '+',  l: 'Registered formulations' },
-              { v: 1800, suffix: '+',  l: 'Distributors nationwide' },
-              { v: 11,   suffix: '',   l: 'Export markets' },
-            ].map((s, i) => (
-              <Reveal key={s.l} delay={i * 80}>
+          <div className="grid grid-cols-2 gap-6 lg:grid-cols-4 lg:gap-8">
+            {numbers.map((s, i) => (
+              <Reveal key={s.label} delay={i * 70}>
                 <p className="font-display text-3xl font-bold tracking-tight text-ink-900 sm:text-4xl">
                   <CountUp to={s.v} suffix={s.suffix} />
                 </p>
-                <p className="mt-1 text-xs text-ink-500">{s.l}</p>
+                <p className="mt-1 max-w-36 text-xs leading-snug text-ink-500">{s.label}</p>
               </Reveal>
             ))}
           </div>
         </Container>
       </section>
 
-      {/* Mission + values */}
-      <section className="py-20 sm:py-24">
+      <section className="py-16 sm:py-20 lg:py-24">
         <Container>
-          <div className="grid items-start gap-12 lg:grid-cols-12 lg:gap-16">
+          <div className="grid items-start gap-10 lg:grid-cols-12 lg:gap-16">
             <Reveal className="lg:col-span-5">
-              <span className="text-xs font-semibold uppercase tracking-[0.2em] text-brand-700">Our mission</span>
-              <h2 className="mt-3 font-display text-3xl font-bold leading-[1.1] text-ink-900 sm:text-4xl lg:text-[2.75rem]">
-                Inputs that work,
-                harvests that <span className="font-serif-accent text-brand-700">hold.</span>
+              <span className="text-[11px] font-semibold uppercase tracking-[0.2em] text-brand-700 sm:text-xs">
+                What guides us
+              </span>
+              <h2 className="mt-3 font-display text-[2rem] font-bold leading-[1.08] text-ink-900 sm:text-4xl lg:text-[2.75rem]">
+                Products are useful only when
+                <span className="block font-serif-accent text-brand-700">farmers can use them well.</span>
               </h2>
               <p className="mt-4 text-base leading-relaxed text-ink-600">
-                To put scientifically rigorous, residue-managed agricultural
-                inputs in the hands of every Indian farmer — and to do so
-                without compromising the soil they pass on to the next
-                generation.
+                Our work sits between science and season reality: clear labels,
+                practical dose guidance, fast response, and inputs that fit
+                actual field workflows.
               </p>
             </Reveal>
 
+            <div className="grid gap-4 sm:grid-cols-2 lg:col-span-7">
+              {values.map((item, i) => (
+                <Reveal key={item.title} delay={(i % 2) * 80}>
+                  <div className="h-full rounded-2xl bg-white p-6 shadow-soft ring-1 ring-brand-100 transition-all duration-300 hover:-translate-y-1 hover:shadow-card">
+                    <span className="grid h-11 w-11 place-items-center rounded-full bg-brand-50 text-brand-700">
+                      <item.icon aria-hidden="true" />
+                    </span>
+                    <h3 className="mt-4 font-display text-lg font-bold text-ink-900">{item.title}</h3>
+                    <p className="mt-2 text-sm leading-relaxed text-ink-600">{item.text}</p>
+                  </div>
+                </Reveal>
+              ))}
+            </div>
+          </div>
+        </Container>
+      </section>
+
+      <section className="bg-surface-muted py-16 sm:py-20 lg:py-24">
+        <Container>
+          <div className="grid items-center gap-10 lg:grid-cols-12 lg:gap-16">
+            <Reveal className="lg:col-span-5">
+              <div className="relative overflow-hidden rounded-2xl bg-ink-900 shadow-photo">
+                <img
+                  src={img.fields}
+                  alt="Crop field representing Cropland field support"
+                  loading="lazy"
+                  className="h-[28rem] w-full object-cover opacity-80"
+                />
+                <div className="absolute inset-0 bg-linear-to-t from-ink-900 via-ink-900/30 to-transparent" aria-hidden="true" />
+                <div className="absolute inset-x-0 bottom-0 p-6">
+                  <p className="font-display text-2xl font-bold leading-tight text-white">
+                    Field context comes before product advice.
+                  </p>
+                </div>
+              </div>
+            </Reveal>
+
             <div className="lg:col-span-7">
-              <div className="grid gap-5 sm:grid-cols-2">
-                {values.map((v, i) => (
-                  <Reveal key={v.title} delay={(i % 2) * 80}>
-                    <div className="h-full rounded-2xl bg-white p-6 shadow-soft ring-1 ring-brand-100 transition-all duration-300 hover:-translate-y-1 hover:shadow-card">
-                      <span className="grid h-11 w-11 place-items-center rounded-xl bg-brand-50 text-brand-700">
-                        <v.icon aria-hidden="true" />
+              <Reveal>
+                <span className="text-[11px] font-semibold uppercase tracking-[0.2em] text-brand-700 sm:text-xs">
+                  How we work
+                </span>
+                <h2 className="mt-3 font-display text-[2rem] font-bold leading-[1.08] text-ink-900 sm:text-4xl lg:text-[2.75rem]">
+                  A responsive support system
+                  <span className="block font-serif-accent text-brand-700">for season decisions.</span>
+                </h2>
+              </Reveal>
+
+              <div className="mt-8 grid gap-4 sm:grid-cols-2">
+                {capabilities.map((item, i) => (
+                  <Reveal key={item.title} delay={(i % 2) * 80}>
+                    <div className="flex h-full gap-4 border-t border-brand-100 py-5">
+                      <span className="grid h-11 w-11 shrink-0 place-items-center rounded-full bg-white text-brand-700 shadow-soft ring-1 ring-brand-100">
+                        <item.icon aria-hidden="true" />
                       </span>
-                      <h3 className="mt-4 font-display text-lg font-bold text-ink-900">{v.title}</h3>
-                      <p className="mt-1.5 text-sm leading-relaxed text-ink-600">{v.text}</p>
+                      <div>
+                        <h3 className="font-display text-lg font-bold text-ink-900">{item.title}</h3>
+                        <p className="mt-1 text-sm leading-relaxed text-ink-600">{item.text}</p>
+                      </div>
                     </div>
                   </Reveal>
                 ))}
@@ -143,128 +217,81 @@ export default function About() {
         </Container>
       </section>
 
-      {/* Leadership */}
-      <section className="bg-surface-muted py-20 sm:py-24">
-        <Container>
-          <Reveal className="max-w-2xl">
-            <span className="text-xs font-semibold uppercase tracking-[0.2em] text-brand-700">Leadership</span>
-            <h2 className="mt-3 font-display text-3xl font-bold leading-[1.1] text-ink-900 sm:text-4xl lg:text-[2.75rem]">
-              The people behind
-              the <span className="font-serif-accent text-brand-700">label.</span>
-            </h2>
-            <p className="mt-4 text-base leading-relaxed text-ink-600">
-              A founder-led team of agronomists, chemists and supply-chain
-              veterans — most of whom grew up on family farms themselves.
-            </p>
-          </Reveal>
-
-          <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {leadership.map((p, i) => (
-              <Reveal key={p.name} delay={i * 80}>
-                <div className="group h-full overflow-hidden rounded-3xl bg-white shadow-soft ring-1 ring-brand-100 transition-all duration-300 hover:-translate-y-1 hover:shadow-card">
-                  <div className="aspect-5/4 overflow-hidden bg-brand-100">
-                    <img
-                      src={p.avatar}
-                      alt={`${p.name}, ${p.role}`}
-                      loading="lazy"
-                      className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
-                    />
-                  </div>
-                  <div className="p-6">
-                    <h3 className="font-display text-xl font-bold text-ink-900">{p.name}</h3>
-                    <p className="mt-1 text-sm font-medium text-brand-800">{p.role}</p>
-                  </div>
-                </div>
-              </Reveal>
-            ))}
-          </div>
-        </Container>
-      </section>
-
-      {/* Facility split */}
-      <section className="py-20 sm:py-24">
-        <Container>
-          <div className="grid items-center gap-12 lg:grid-cols-12 lg:gap-16">
-            <Reveal delay={80} className="relative lg:col-span-5 lg:order-1">
-              <div className="relative mx-auto aspect-4/5 w-full max-w-md">
-                <div className="absolute -right-4 -top-4 h-full w-full rounded-4xl bg-harvest-200" aria-hidden="true" />
-                <div className="photo-treatment relative h-full w-full overflow-hidden rounded-4xl bg-brand-100 shadow-photo">
-                  <img
-                    src={img.facility}
-                    alt="Cropland manufacturing facility in Bharuch, Gujarat"
-                    loading="lazy"
-                    className="h-full w-full object-cover"
-                  />
-                </div>
-                <div className="absolute -left-3 bottom-8 rounded-2xl bg-white p-4 shadow-card ring-1 ring-black/4">
-                  <p className="font-display text-2xl font-bold text-ink-900">
-                    <CountUp to={40000} />
-                  </p>
-                  <p className="text-xs text-ink-500">MT / year capacity</p>
-                </div>
-              </div>
-            </Reveal>
-
-            <Reveal className="lg:col-span-7 lg:order-2">
-              <span className="text-xs font-semibold uppercase tracking-[0.2em] text-brand-700">Facility</span>
-              <h2 className="mt-3 font-display text-3xl font-bold leading-[1.1] text-ink-900 sm:text-4xl lg:text-[2.75rem]">
-                A GMP plant built
-                for <span className="font-serif-accent text-brand-700">the long season.</span>
-              </h2>
-              <p className="mt-4 text-base leading-relaxed text-ink-600">
-                Our Bharuch facility consolidates formulation, packaging and
-                quality control under one roof — designed from day one for
-                operator safety, batch traceability and environmental compliance.
-              </p>
-
-              <ul className="mt-8 grid gap-3 sm:grid-cols-2">
-                {facilityHighlights.map((h) => (
-                  <li key={h} className="flex items-start gap-3 text-sm text-ink-700">
-                    <FaCheckCircle className="mt-0.5 shrink-0 text-brand-600" aria-hidden="true" />
-                    {h}
-                  </li>
-                ))}
-              </ul>
-            </Reveal>
-          </div>
-        </Container>
-      </section>
-
-      {/* Milestones */}
-      <section id="sustainability" className="bg-surface-muted py-20 sm:py-24">
+      <section id="timeline" className="py-16 sm:py-20 lg:py-24">
         <Container>
           <Reveal className="mx-auto max-w-2xl text-center">
-            <span className="text-xs font-semibold uppercase tracking-[0.2em] text-brand-700">Milestones</span>
-            <h2 className="mt-3 font-display text-3xl font-bold leading-[1.1] text-ink-900 sm:text-4xl lg:text-[2.75rem]">
-              Twenty-five seasons.
-              <span className="font-serif-accent text-brand-700"> Counted.</span>
+            <span className="text-[11px] font-semibold uppercase tracking-[0.2em] text-brand-700 sm:text-xs">
+              Timeline
+            </span>
+            <h2 className="mt-3 font-display text-[2rem] font-bold leading-[1.08] text-ink-900 sm:text-4xl lg:text-[2.75rem]">
+              Milestones that shaped
+              <span className="font-serif-accent text-brand-700"> Cropland.</span>
             </h2>
             <p className="mt-4 text-base leading-relaxed text-ink-600">
-              A short timeline of how Cropland grew from one bench in Ahmedabad
-              into a pan-India agritech.
+              The growth story stays on the page: from field-led product advice
+              to a faster WhatsApp support workflow for growers and dealers.
             </p>
           </Reveal>
 
-          <ol className="relative mx-auto mt-14 max-w-4xl">
-            <span className="absolute left-4 top-2 bottom-2 w-px bg-linear-to-b from-brand-200 via-brand-400 to-brand-200 md:left-1/2" aria-hidden="true" />
-            {milestones.map((m, i) => (
-              <li
-                key={m.year}
-                className={`relative mb-10 grid grid-cols-[2rem_1fr] gap-4 md:grid-cols-2 md:gap-12`}
-              >
+          <ol className="relative mx-auto mt-12 max-w-5xl sm:mt-14">
+            <span className="absolute left-4 top-3 bottom-3 w-px bg-linear-to-b from-brand-200 via-brand-500 to-brand-200 md:left-1/2" aria-hidden="true" />
+            {timeline.map((item, i) => (
+              <li key={item.year} className="relative mb-8 last:mb-0 md:grid md:grid-cols-2 md:gap-12">
+                <span className="absolute left-4 top-6 h-4 w-4 -translate-x-1/2 rounded-full bg-brand-700 ring-4 ring-surface md:left-1/2" aria-hidden="true" />
                 <Reveal
-                  delay={i * 60}
-                  className={i % 2 === 0 ? 'md:text-right md:pr-12' : 'md:col-start-2 md:pl-12'}
+                  delay={i * 70}
+                  className={`ml-10 rounded-2xl bg-white p-5 shadow-soft ring-1 ring-brand-100 md:ml-0 md:p-6 ${
+                    i % 2 === 0 ? 'md:mr-8 md:text-right' : 'md:col-start-2 md:ml-8'
+                  }`}
                 >
-                  <p className="font-display text-3xl font-bold text-brand-800">{m.year}</p>
-                  <h3 className="mt-1 font-display text-lg font-semibold text-ink-900">{m.title}</h3>
-                  <p className="mt-1.5 text-sm leading-relaxed text-ink-600">{m.text}</p>
+                  <p className="font-display text-3xl font-bold text-brand-700">{item.year}</p>
+                  <h3 className="mt-2 font-display text-xl font-bold text-ink-900">{item.title}</h3>
+                  <p className="mt-2 text-sm leading-relaxed text-ink-600">{item.text}</p>
                 </Reveal>
-
-                <span className="absolute left-4 top-1.5 hidden h-4 w-4 -translate-x-1/2 rounded-full bg-brand-600 ring-4 ring-surface-muted md:left-1/2 md:block" aria-hidden="true" />
               </li>
             ))}
           </ol>
+        </Container>
+      </section>
+
+      <section className="bg-surface-muted py-16 sm:py-20 lg:py-24">
+        <Container>
+          <div className="grid gap-10 lg:grid-cols-12 lg:gap-16">
+            <Reveal className="lg:col-span-4">
+              <span className="text-[11px] font-semibold uppercase tracking-[0.2em] text-brand-700 sm:text-xs">
+                Sustainability
+              </span>
+              <h2 className="mt-3 font-display text-[2rem] font-bold leading-[1.08] text-ink-900 sm:text-4xl">
+                Growing responsibly,
+                <span className="block font-serif-accent text-brand-700">season after season.</span>
+              </h2>
+            </Reveal>
+
+            <Reveal className="lg:col-span-8">
+              <p className="max-w-3xl text-base leading-relaxed text-ink-600">
+                Cropland focuses on practical stewardship: clear usage guidance,
+                residue-aware recommendations, safer application behavior and
+                a product range that helps growers solve the right problem at
+                the right crop stage.
+              </p>
+            </Reveal>
+          </div>
+        </Container>
+      </section>
+
+      <section className="bg-ink-900 py-14 text-white sm:py-16">
+        <Container>
+          <div className="grid gap-6 sm:grid-cols-[1fr_auto] sm:items-center">
+            <div>
+              <span className="text-[11px] font-semibold uppercase tracking-[0.2em] text-brand-200">Ready to connect</span>
+              <h2 className="mt-3 font-display text-3xl font-bold text-white sm:text-4xl">
+                Send crop details directly to the team.
+              </h2>
+            </div>
+            <Button to="/contact" variant="cta" size="lg" iconRight={FaArrowRight}>
+              Open contact form
+            </Button>
+          </div>
         </Container>
       </section>
 

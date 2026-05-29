@@ -1,13 +1,18 @@
 import { Link } from 'react-router-dom'
 import {
-  FaEnvelope,
-  FaPhoneAlt,
-  FaMapMarkerAlt,
   FaArrowRight,
   FaCheckCircle,
+  FaEnvelope,
+  FaFlask,
+  FaLeaf,
+  FaMapMarkerAlt,
+  FaPhoneAlt,
+  FaSeedling,
+  FaShieldAlt,
 } from 'react-icons/fa'
 import Container from './ui/Container.jsx'
 import Logo from './ui/Logo.jsx'
+import { img } from '../data/images.js'
 
 const groups = [
   {
@@ -39,90 +44,104 @@ const groups = [
   },
 ]
 
+const certifications = ['CIB&RC', 'ISO 9001', 'ISO 14001', 'GMP', 'FCO', 'REACH']
+
 export default function Footer() {
   return (
-    <footer className="relative isolate mt-12 overflow-hidden bg-ink-900 text-ink-400">
-      {/* Subtle warm accent on top edge */}
+    <footer className="relative isolate mt-12 overflow-hidden bg-ink-900 text-brand-100/80">
       <div className="h-1 w-full bg-linear-to-r from-brand-700 via-harvest-300 to-brand-700" aria-hidden="true" />
 
-      <Container className="relative pt-16 pb-10">
-        {/* Newsletter band */}
-        <div className="rounded-4xl border border-white/10 bg-white/3 p-8 md:p-10">
-          <div className="grid items-center gap-6 md:grid-cols-2 md:gap-10">
+      <Container className="relative py-10 sm:py-12 lg:py-14">
+        <div className="relative isolate overflow-hidden rounded-2xl border border-white/10 bg-white/5 p-5 shadow-card sm:p-7 lg:p-8">
+          <img
+            src={img.ctaField}
+            alt=""
+            loading="lazy"
+            className="absolute inset-0 -z-10 h-full w-full object-cover opacity-20"
+          />
+          <div className="absolute inset-0 -z-10 bg-linear-to-r from-ink-900 via-ink-900/90 to-brand-900/70" aria-hidden="true" />
+
+          <div className="grid gap-6 lg:grid-cols-[1.15fr_0.85fr] lg:items-center">
             <div>
-              <span className="inline-flex items-center gap-2 rounded-full bg-brand-700/30 px-3 py-1.5 text-[11px] font-semibold uppercase tracking-[0.16em] text-brand-100 ring-1 ring-white/10">
-                <FaCheckCircle aria-hidden="true" />
-                Free crop advisory
+              <span className="inline-flex items-center gap-2 rounded-full bg-brand-300/15 px-3 py-1.5 text-[11px] font-semibold uppercase tracking-[0.14em] text-brand-100 ring-1 ring-white/10">
+                <FaLeaf aria-hidden="true" />
+                Advisory desk
               </span>
-              <h3 className="mt-4 font-display text-2xl font-bold text-white md:text-3xl">
-                Crop calendars, residue alerts and<br className="hidden md:block" /> spray windows — to your inbox.
-              </h3>
-              <p className="mt-2 text-sm text-ink-400">
-                Zone-specific guidance written by our agronomy team. No spam, ever.
+              <h2 className="mt-4 max-w-2xl font-display text-2xl font-bold leading-tight text-white sm:text-3xl">
+                Crop calendars, residue alerts and spray windows matched to the season.
+              </h2>
+              <p className="mt-3 max-w-xl text-sm leading-relaxed text-brand-100/75">
+                Practical notes from Cropland agronomists for distributors,
+                retailers and progressive growers.
               </p>
             </div>
-            <form
-              className="flex flex-col gap-3 sm:flex-row"
-              onSubmit={(e) => e.preventDefault()}
-            >
+
+            <form className="grid gap-3 sm:grid-cols-[1fr_auto]" onSubmit={(e) => e.preventDefault()}>
               <label htmlFor="newsletter" className="sr-only">Email address</label>
               <input
                 id="newsletter"
                 type="email"
                 required
                 placeholder="you@farm.in"
-                className="w-full rounded-full border border-white/15 bg-white/6 px-5 py-3 text-sm text-white placeholder:text-ink-400 focus:border-brand-300 focus:bg-white/10 focus:outline-none"
+                className="min-w-0 rounded-full border border-white/15 bg-white/10 px-5 py-3 text-sm text-white placeholder:text-brand-100/60 focus:border-brand-300 focus:bg-white/15 focus:outline-none"
               />
               <button
                 type="submit"
-                className="inline-flex shrink-0 cursor-pointer items-center justify-center gap-2 rounded-full bg-harvest-300 px-6 py-3 text-sm font-semibold text-ink-900 transition-colors hover:bg-harvest-200"
+                className="inline-flex cursor-pointer items-center justify-center gap-2 rounded-full bg-harvest-300 px-6 py-3 text-sm font-semibold text-ink-900 transition-colors hover:bg-harvest-200"
               >
-                Subscribe <FaArrowRight aria-hidden="true" />
+                Subscribe
+                <FaArrowRight className="text-xs" aria-hidden="true" />
               </button>
             </form>
           </div>
         </div>
 
-        {/* Main grid */}
-        <div className="mt-14 grid gap-12 md:grid-cols-12 md:gap-8">
-          <div className="md:col-span-5">
+        <div className="mt-10 grid gap-9 sm:grid-cols-2 lg:grid-cols-12 lg:gap-8">
+          <div className="sm:col-span-2 lg:col-span-4">
             <Logo invert />
-            <p className="mt-5 max-w-md text-sm leading-relaxed text-ink-400">
-              Cropland Agritech India formulates safe, high-efficacy agricultural
-              inputs for resilient farms — from molecule to monsoon. Built by
-              agronomists, for the people who actually farm.
+            <p className="mt-5 max-w-md text-sm leading-relaxed text-brand-100/70">
+              Safe, high-efficacy agricultural inputs for resilient farms, built
+              across formulation chemistry, agronomy and field stewardship.
             </p>
-            <ul className="mt-6 space-y-3 text-sm">
-              <li className="flex items-start gap-3">
-                <FaMapMarkerAlt className="mt-1 shrink-0 text-brand-300" aria-hidden="true" />
-                <span>
-                  Plot 12, Industrial Zone Phase II,<br />
-                  Ahmedabad, Gujarat 380015, India
+
+            <div className="mt-6 grid gap-3">
+              <a href="tel:+919760302690" className="inline-flex min-w-0 items-center gap-3 text-sm font-medium transition-colors hover:text-white">
+                <span className="grid h-9 w-9 shrink-0 place-items-center rounded-full bg-white/10 text-brand-200 ring-1 ring-white/10">
+                  <FaPhoneAlt aria-hidden="true" />
                 </span>
-              </li>
-              <li className="flex items-center gap-3">
-                <FaPhoneAlt className="shrink-0 text-brand-300" aria-hidden="true" />
-                <a href="tel:+911234567890" className="hover:text-white transition-colors">+91 1234 567 890</a>
-              </li>
-              <li className="flex items-center gap-3">
-                <FaEnvelope className="shrink-0 text-brand-300" aria-hidden="true" />
-                <a href="mailto:hello@croplandagritech.in" className="hover:text-white transition-colors">hello@croplandagritech.in</a>
-              </li>
-            </ul>
+                <span>+91 97603 02690</span>
+              </a>
+              <a href="mailto:hello@croplandagritech.in" className="inline-flex min-w-0 items-center gap-3 text-sm font-medium transition-colors hover:text-white">
+                <span className="grid h-9 w-9 shrink-0 place-items-center rounded-full bg-white/10 text-brand-200 ring-1 ring-white/10">
+                  <FaEnvelope aria-hidden="true" />
+                </span>
+                <span className="truncate">hello@croplandagritech.in</span>
+              </a>
+              <p className="inline-flex items-start gap-3 text-sm leading-relaxed">
+                <span className="grid h-9 w-9 shrink-0 place-items-center rounded-full bg-white/10 text-brand-200 ring-1 ring-white/10">
+                  <FaMapMarkerAlt aria-hidden="true" />
+                </span>
+                <span>
+                  Pinna, Muzaffarnagar,<br />
+                  Uttar Pradesh 251001, India
+                </span>
+              </p>
+            </div>
           </div>
 
           {groups.map((g) => (
-            <nav key={g.title} aria-label={g.title} className="md:col-span-2">
-              <h4 className="text-[11px] font-semibold uppercase tracking-[0.16em] text-white">
+            <nav key={g.title} aria-label={g.title} className="lg:col-span-2">
+              <h3 className="text-[11px] font-semibold uppercase tracking-[0.16em] text-white">
                 {g.title}
-              </h4>
+              </h3>
               <ul className="mt-4 space-y-2.5 text-sm">
                 {g.links.map((l) => (
                   <li key={l.label}>
                     <Link
                       to={l.to}
-                      className="inline-block text-ink-400 transition-colors hover:text-white"
+                      className="inline-flex items-center gap-2 text-brand-100/70 transition-colors hover:text-white"
                     >
+                      <span className="h-1 w-1 rounded-full bg-brand-300/70" aria-hidden="true" />
                       {l.label}
                     </Link>
                   </li>
@@ -131,31 +150,40 @@ export default function Footer() {
             </nav>
           ))}
 
-          {/* Trust strip */}
-          <div className="md:col-span-1 md:border-l md:border-white/10 md:pl-8">
-            <h4 className="text-[11px] font-semibold uppercase tracking-[0.16em] text-white">Certified</h4>
-            <ul className="mt-4 space-y-2 text-xs text-ink-400">
-              {['CIB&RC', 'ISO 9001', 'ISO 14001', 'GMP', 'FCO', 'REACH'].map((c) => (
-                <li key={c} className="flex items-center gap-1.5">
-                  <span className="h-1 w-1 rounded-full bg-brand-300" aria-hidden="true" />
+          <div className="sm:col-span-2 lg:col-span-2">
+            <h3 className="text-[11px] font-semibold uppercase tracking-[0.16em] text-white">Certified</h3>
+            <div className="mt-4 flex flex-wrap gap-2">
+              {certifications.map((c) => (
+                <span key={c} className="rounded-full bg-white/10 px-3 py-1.5 text-xs font-semibold text-brand-100 ring-1 ring-white/10">
                   {c}
-                </li>
+                </span>
               ))}
-            </ul>
+            </div>
+            <div className="mt-5 grid gap-2 text-xs font-medium text-brand-100/70">
+              <span className="inline-flex items-center gap-2">
+                <FaCheckCircle className="text-brand-300" aria-hidden="true" />
+                Label-to-lab traceability
+              </span>
+              <span className="inline-flex items-center gap-2">
+                <FaShieldAlt className="text-brand-300" aria-hidden="true" />
+                Stewardship-led launches
+              </span>
+              <span className="inline-flex items-center gap-2">
+                <FaFlask className="text-brand-300" aria-hidden="true" />
+                In-house formulation R&amp;D
+              </span>
+            </div>
           </div>
         </div>
 
-        {/* Bottom bar */}
-        <div className="mt-12 flex flex-col items-start justify-between gap-4 border-t border-white/10 pt-6 sm:flex-row sm:items-center">
-          <p className="text-xs text-ink-500">
-            © {new Date().getFullYear()} Cropland Agritech India Pvt. Ltd. · All rights reserved.
-          </p>
-          <div className="flex flex-wrap items-center gap-x-5 gap-y-2 text-xs">
-            <span className="inline-flex items-center gap-1.5 rounded-full bg-white/5 px-3 py-1 font-medium text-ink-400 ring-1 ring-white/10">
-              <span className="h-1.5 w-1.5 rounded-full bg-brand-300" aria-hidden="true" />
+        <div className="mt-10 flex flex-col gap-4 border-t border-white/10 pt-6 text-xs text-brand-100/60 sm:flex-row sm:items-center sm:justify-between">
+          <p>© {new Date().getFullYear()} Cropland Agritech India Pvt. Ltd. All rights reserved.</p>
+          <div className="flex flex-wrap items-center gap-x-4 gap-y-2">
+            <span className="inline-flex items-center gap-2 rounded-full bg-white/5 px-3 py-1 font-semibold text-brand-100/75 ring-1 ring-white/10">
+              <FaSeedling className="text-brand-300" aria-hidden="true" />
               Proudly made in India
             </span>
-            <span className="text-ink-500">CIN: U24290GJ2000PTC123456</span>
+            <span>Pinna, Muzaffarnagar, Uttar Pradesh</span>
           </div>
         </div>
       </Container>

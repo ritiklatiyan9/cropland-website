@@ -1,4 +1,5 @@
 import Hero from '../components/sections/Hero.jsx'
+import HomeHighlights from '../components/sections/HomeHighlights.jsx'
 import TrustStrip from '../components/sections/TrustStrip.jsx'
 import Solutions from '../components/sections/Solutions.jsx'
 import WhyCropland from '../components/sections/WhyCropland.jsx'
@@ -14,6 +15,7 @@ export default function Home() {
     <>
       <Hero />
       <TrustStrip />
+      <HomeHighlights />
       <Solutions />
       <WhyCropland />
       <Stats />
