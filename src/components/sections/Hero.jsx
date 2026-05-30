@@ -50,8 +50,8 @@ export default function Hero() {
             Crop protection · Nutrition · Bio-solutions
           </span>
 
-          <h1 className="mt-5 font-display text-[2.6rem] font-bold leading-[0.95] tracking-tight text-white drop-shadow-sm sm:text-7xl lg:text-[6rem] xl:text-[7rem]">
-            CROPLAND AGRITECH
+          <h1 className="mt-5 font-display text-[2.6rem] font-bold leading-[0.95] tracking-tight text-white drop-shadow-sm sm:text-4xl lg:text-[4rem] xl:text-[5rem]">
+            CROPLAND AGRITECH INDIA
             <span className="mt-2 block font-serif-accent text-[2.1rem] font-medium text-harvest-200 sm:text-5xl lg:text-[3.5rem]">
               for every Indian farmer.
             </span>

@@ -3,6 +3,7 @@ import { FaArrowRight } from 'react-icons/fa'
 import Container from '../ui/Container.jsx'
 import Button from '../ui/Button.jsx'
 import { products, slug, categoryLabel } from '../../data/products.js'
+import ProductLabel from '../ProductLabel.jsx'
 
 const categoryDot = {
   insecticide: 'bg-brand-500',
@@ -39,7 +40,7 @@ export default function ProductCarousel() {
 
         <div
           className="group flex w-max gap-4 animate-marquee py-2 sm:gap-5"
-          style={{ animationDuration: '60s' }}
+          style={{ animationDuration: '150s' }}
         >
           {loop.map((p, i) => (
             <Link
@@ -49,13 +50,10 @@ export default function ProductCarousel() {
               aria-label={`Open ${p.name} details`}
             >
               <div className="relative aspect-4/3 overflow-hidden">
-                <img
-                  src={p.image}
-                  alt=""
-                  loading="lazy"
-                  className="h-full w-full object-cover transition-transform duration-700 hover:scale-105"
-                />
-                <div className="absolute inset-0 bg-linear-to-t from-ink-900/35 via-transparent to-transparent" />
+                <div className="h-full w-full transition-transform duration-700 hover:scale-105">
+                  <ProductLabel product={p} />
+                </div>
+                <div className="absolute inset-0 bg-linear-to-t from-ink-900/30 via-transparent to-transparent" />
                 <span className="absolute left-3 top-3 inline-flex items-center gap-2 rounded-full bg-white/95 px-2.5 py-1 text-[10px] font-semibold uppercase tracking-wider text-ink-700">
                   <span className={`h-1.5 w-1.5 rounded-full ${categoryDot[p.category]}`} />
                   {categoryLabel[p.category]}

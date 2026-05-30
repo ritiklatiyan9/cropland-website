@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom'
 import { FaArrowRight, FaSeedling } from 'react-icons/fa'
 import { slug, categoryLabel } from '../data/products.js'
+import ProductLabel from './ProductLabel.jsx'
 
 const categoryDot = {
   insecticide: 'bg-brand-500',
@@ -17,14 +18,11 @@ export default function ProductCard({ product, className = '' }) {
     <article
       className={`group relative flex h-full flex-col overflow-hidden rounded-2xl border border-brand-100 bg-white shadow-soft transition-all duration-300 hover:-translate-y-1 hover:border-brand-200 hover:shadow-card ${className}`}
     >
-      <Link to={href} className="relative block aspect-[16/10] overflow-hidden bg-brand-100">
-        <img
-          src={product.image}
-          alt={`${product.name} - ${product.technical}`}
-          loading="lazy"
-          className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
-        />
-        <div className="absolute inset-0 bg-linear-to-t from-ink-900/60 via-ink-900/10 to-transparent" aria-hidden="true" />
+      <Link to={href} className="relative block aspect-16/10 overflow-hidden bg-brand-50">
+        <div className="h-full w-full transition-transform duration-700 group-hover:scale-105">
+          <ProductLabel product={product} />
+        </div>
+        <div className="absolute inset-0 bg-linear-to-t from-ink-900/45 via-transparent to-transparent" aria-hidden="true" />
 
         <span className="absolute left-3 top-3 inline-flex max-w-[58%] items-center gap-2 rounded-full bg-white/95 px-3 py-1 text-[10px] font-bold uppercase tracking-wider text-ink-700 shadow-soft backdrop-blur">
           <span className={`h-1.5 w-1.5 shrink-0 rounded-full ${categoryDot[product.category]}`} />
