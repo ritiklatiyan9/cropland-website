@@ -16,6 +16,9 @@ import Container from '../components/ui/Container.jsx'
 import Button from '../components/ui/Button.jsx'
 import Reveal from '../components/ui/Reveal.jsx'
 import { img } from '../data/images.js'
+import Seo from '../components/Seo.jsx'
+import JsonLd from '../components/JsonLd.jsx'
+import { localBusinessSchema, breadcrumbSchema } from '../seo/schema.js'
 
 const whatsappNumber = '919760302690'
 const displayPhone = '+91 97603 02690'
@@ -35,7 +38,7 @@ const enquiryTypes = [
 const contactCards = [
   { icon: FaWhatsapp, label: 'WhatsApp', value: displayPhone, href: `https://wa.me/${whatsappNumber}` },
   { icon: FaPhoneAlt, label: 'Call', value: displayPhone, href: 'tel:+919760302690' },
-  { icon: FaEnvelope, label: 'Email', value: 'hello@croplandagritech.in', href: 'mailto:hello@croplandagritech.in' },
+  { icon: FaEnvelope, label: 'Email', value: 'sales@croplandagritech.com', href: 'mailto:sales@croplandagritech.com' },
 ]
 
 const checklist = [
@@ -72,6 +75,20 @@ export default function Contact() {
 
   return (
     <>
+      <Seo
+        title="Contact Cropland Agritech — Pesticide Company in Muzaffarnagar"
+        description="Contact Cropland Agritech in Pinna, Muzaffarnagar (UP 251001) for product, dealership and bulk pesticide enquiries. WhatsApp or call +91 97603 02690 — Mon–Sat, 9–6."
+        path="/contact"
+      />
+      <JsonLd
+        data={[
+          localBusinessSchema(),
+          breadcrumbSchema([
+            { name: 'Home', path: '/' },
+            { name: 'Contact', path: '/contact' },
+          ]),
+        ]}
+      />
       <section className="relative isolate overflow-hidden bg-ink-900 text-white">
         <img
           src={img.fields}

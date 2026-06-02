@@ -1,4 +1,4 @@
-import { FaArrowRight, FaCheckCircle, FaLeaf, FaSeedling, FaWhatsapp } from 'react-icons/fa'
+import { FaArrowRight, FaCheckCircle, FaWhatsapp } from 'react-icons/fa'
 import Container from '../ui/Container.jsx'
 import Button from '../ui/Button.jsx'
 import { img } from '../../data/images.js'
@@ -17,9 +17,9 @@ export default function Hero() {
       {/* Full-bleed background photograph */}
       <img
         src={img.heroWide}
-        alt=""
+        alt="Cropland Agritech crop-protection products in an Indian farm field"
         loading="eager"
-        fetchpriority="high"
+        fetchPriority="high"
         className="absolute inset-0 -z-20 h-full w-full scale-105 object-cover object-center"
       />
 

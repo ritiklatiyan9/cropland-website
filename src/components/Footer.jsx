@@ -1,14 +1,11 @@
 import { Link } from 'react-router-dom'
 import {
   FaArrowRight,
-  FaCheckCircle,
   FaEnvelope,
-  FaFlask,
   FaLeaf,
   FaMapMarkerAlt,
   FaPhoneAlt,
   FaSeedling,
-  FaShieldAlt,
 } from 'react-icons/fa'
 import Container from './ui/Container.jsx'
 import Logo from './ui/Logo.jsx'
@@ -31,6 +28,15 @@ const groups = [
       { label: 'Research & Innovation', to: '/research' },
       { label: 'Sustainability', to: '/about#sustainability' },
       { label: 'Contact', to: '/contact' },
+    ],
+  },
+  {
+    title: 'Service areas',
+    links: [
+      { label: 'Muzaffarnagar', to: '/pesticide-company/muzaffarnagar' },
+      { label: 'Meerut', to: '/pesticide-company/meerut' },
+      { label: 'Lucknow', to: '/pesticide-company/lucknow' },
+      { label: 'Western UP', to: '/pesticide-company/west-up' },
     ],
   },
   {
@@ -111,11 +117,11 @@ export default function Footer() {
                 </span>
                 <span>+91 97603 02690</span>
               </a>
-              <a href="mailto:hello@croplandagritech.in" className="inline-flex min-w-0 items-center gap-3 text-sm font-medium transition-colors hover:text-white">
+              <a href="mailto:sales@croplandagritech.com" className="inline-flex min-w-0 items-center gap-3 text-sm font-medium transition-colors hover:text-white">
                 <span className="grid h-9 w-9 shrink-0 place-items-center rounded-full bg-white/10 text-brand-200 ring-1 ring-white/10">
                   <FaEnvelope aria-hidden="true" />
                 </span>
-                <span className="truncate">hello@croplandagritech.in</span>
+                <span className="truncate">sales@croplandagritech.com</span>
               </a>
               <p className="inline-flex items-start gap-3 text-sm leading-relaxed">
                 <span className="grid h-9 w-9 shrink-0 place-items-center rounded-full bg-white/10 text-brand-200 ring-1 ring-white/10">
@@ -126,6 +132,17 @@ export default function Footer() {
                   Uttar Pradesh 251001, India
                 </span>
               </p>
+            </div>
+
+            <div className="mt-6">
+              <h3 className="text-[11px] font-semibold uppercase tracking-[0.16em] text-white">Certified</h3>
+              <div className="mt-3 flex flex-wrap gap-2">
+                {certifications.map((c) => (
+                  <span key={c} className="rounded-full bg-white/10 px-3 py-1.5 text-xs font-semibold text-brand-100 ring-1 ring-white/10">
+                    {c}
+                  </span>
+                ))}
+              </div>
             </div>
           </div>
 
@@ -150,30 +167,6 @@ export default function Footer() {
             </nav>
           ))}
 
-          <div className="sm:col-span-2 lg:col-span-2">
-            <h3 className="text-[11px] font-semibold uppercase tracking-[0.16em] text-white">Certified</h3>
-            <div className="mt-4 flex flex-wrap gap-2">
-              {certifications.map((c) => (
-                <span key={c} className="rounded-full bg-white/10 px-3 py-1.5 text-xs font-semibold text-brand-100 ring-1 ring-white/10">
-                  {c}
-                </span>
-              ))}
-            </div>
-            <div className="mt-5 grid gap-2 text-xs font-medium text-brand-100/70">
-              <span className="inline-flex items-center gap-2">
-                <FaCheckCircle className="text-brand-300" aria-hidden="true" />
-                Label-to-lab traceability
-              </span>
-              <span className="inline-flex items-center gap-2">
-                <FaShieldAlt className="text-brand-300" aria-hidden="true" />
-                Stewardship-led launches
-              </span>
-              <span className="inline-flex items-center gap-2">
-                <FaFlask className="text-brand-300" aria-hidden="true" />
-                In-house formulation R&amp;D
-              </span>
-            </div>
-          </div>
         </div>
 
         <div className="mt-10 flex flex-col gap-4 border-t border-white/10 pt-6 text-xs text-brand-100/60 sm:flex-row sm:items-center sm:justify-between">

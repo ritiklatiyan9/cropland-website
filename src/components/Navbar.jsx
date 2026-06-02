@@ -59,9 +59,9 @@ export default function Navbar() {
               <FaPhoneAlt className="text-[10px] text-brand-300" aria-hidden="true" />
               +91 97603 02690
             </a>
-            <a href="mailto:hello@croplandagritech.in" className="inline-flex items-center gap-2 transition-colors hover:text-white">
+            <a href="mailto:sales@croplandagritech.com" className="inline-flex items-center gap-2 transition-colors hover:text-white">
               <FaEnvelope className="text-[10px] text-brand-300" aria-hidden="true" />
-              hello@croplandagritech.in
+              sales@croplandagritech.com
             </a>
           </div>
         </Container>
@@ -104,7 +104,7 @@ export default function Navbar() {
 
           <div className="hidden items-center gap-3 lg:flex">
             <a
-              href="mailto:hello@croplandagritech.in"
+              href="mailto:sales@croplandagritech.com"
               className="hidden items-center gap-2 rounded-full border border-brand-100 bg-white/70 px-4 py-2 text-xs font-semibold text-ink-700 shadow-soft transition-colors hover:border-brand-300 hover:text-brand-800 xl:inline-flex"
             >
               <FaFlask className="text-brand-700" aria-hidden="true" />
@@ -163,11 +163,11 @@ export default function Navbar() {
                 </span>
                 <span className="truncate">+91 97603 02690</span>
               </a>
-              <a href="mailto:hello@croplandagritech.in" className="inline-flex min-w-0 items-center gap-3 text-sm font-semibold text-ink-700">
+              <a href="mailto:sales@croplandagritech.com" className="inline-flex min-w-0 items-center gap-3 text-sm font-semibold text-ink-700">
                 <span className="grid h-9 w-9 shrink-0 place-items-center rounded-full bg-white text-brand-700 shadow-soft">
                   <FaEnvelope aria-hidden="true" />
                 </span>
-                <span className="truncate">hello@croplandagritech.in</span>
+                <span className="truncate">sales@croplandagritech.com</span>
               </a>
               <Button
                 to="/contact"

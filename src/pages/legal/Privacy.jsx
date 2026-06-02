@@ -58,7 +58,7 @@ const sections = [
   {
     heading: '7. Your rights',
     body: [
-      'Subject to applicable law, you may request access to, correction of, or deletion of your personal information. You may also object to processing or request a copy of your data in a portable format. Write to our compliance desk at compliance@croplandagritech.in.',
+      'Subject to applicable law, you may request access to, correction of, or deletion of your personal information. You may also object to processing or request a copy of your data in a portable format. Write to our compliance desk at admin@croplandagritech.com.',
     ],
   },
   {

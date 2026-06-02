@@ -29,7 +29,11 @@ import {
   categoryLabel,
   formCode,
   packForm,
+  slug,
 } from '../data/products.js'
+import Seo from '../components/Seo.jsx'
+import JsonLd from '../components/JsonLd.jsx'
+import { productSchema, breadcrumbSchema } from '../seo/schema.js'
 
 const categoryDot = {
   insecticide: 'bg-brand-500',
@@ -55,8 +59,26 @@ export default function ProductDetail() {
   const formLabel = form === 'bottle' ? 'Liquid · Bottle' : 'Solid · Bag / Pouch'
   const FormIcon = form === 'bottle' ? FaPrescriptionBottleAlt : FaBoxOpen
 
+  const path = `/products/${slug(product.code)}`
+
   return (
     <>
+      <Seo
+        title={`${product.name} — ${product.technical}`}
+        description={`${product.name} (${product.technical}): ${product.summary} CIB&RC reg. ${product.reg}. For ${product.crops.join(', ')}. From Cropland Agritech, Muzaffarnagar.`}
+        path={path}
+        type="product"
+      />
+      <JsonLd
+        data={[
+          productSchema(product, path),
+          breadcrumbSchema([
+            { name: 'Home', path: '/' },
+            { name: 'Products', path: '/products' },
+            { name: product.name, path },
+          ]),
+        ]}
+      />
       {/* ───────────────────────── Hero ───────────────────────── */}
       <section className="relative overflow-hidden bg-surface">
         <div className="pointer-events-none absolute -right-24 -top-24 h-80 w-80 rounded-full bg-brand-100/60 blur-3xl" aria-hidden="true" />

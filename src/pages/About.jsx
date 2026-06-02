@@ -16,6 +16,9 @@ import Reveal from '../components/ui/Reveal.jsx'
 import CountUp from '../components/ui/CountUp.jsx'
 import CtaBanner from '../components/sections/CtaBanner.jsx'
 import { img } from '../data/images.js'
+import Seo from '../components/Seo.jsx'
+import JsonLd from '../components/JsonLd.jsx'
+import { organizationSchema, breadcrumbSchema } from '../seo/schema.js'
 
 const values = [
   { icon: FaSeedling, title: 'Farm-first advice', text: 'Recommendations start with crop stage, weather, pest pressure and grower constraints.' },
@@ -49,6 +52,20 @@ const timeline = [
 export default function About() {
   return (
     <>
+      <Seo
+        title="About Cropland Agritech — Pesticide Manufacturer in Muzaffarnagar"
+        description="Cropland Agritech India Pvt. Ltd. is a Muzaffarnagar-based pesticide and agrochemical manufacturer with 25+ years of field experience, serving farmers and dealers across Western Uttar Pradesh, Meerut, Lucknow and 18 states."
+        path="/about"
+      />
+      <JsonLd
+        data={[
+          organizationSchema(),
+          breadcrumbSchema([
+            { name: 'Home', path: '/' },
+            { name: 'About', path: '/about' },
+          ]),
+        ]}
+      />
       <section className="relative isolate overflow-hidden bg-ink-900 text-white">
         <img
           src={img.heroFarmer}

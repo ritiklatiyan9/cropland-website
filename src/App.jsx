@@ -8,6 +8,7 @@ import Products from './pages/Products.jsx'
 import ProductDetail from './pages/ProductDetail.jsx'
 import Research from './pages/Research.jsx'
 import Contact from './pages/Contact.jsx'
+import Location from './pages/Location.jsx'
 import NotFound from './pages/NotFound.jsx'
 import Privacy from './pages/legal/Privacy.jsx'
 import Terms from './pages/legal/Terms.jsx'
@@ -33,6 +34,7 @@ function App() {
           <Route path="/research" element={<Research />} />
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/pesticide-company/:citySlug" element={<Location />} />
           <Route path="/privacy" element={<Privacy />} />
           <Route path="/terms" element={<Terms />} />
           <Route path="/compliance" element={<Compliance />} />

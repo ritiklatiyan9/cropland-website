@@ -60,7 +60,7 @@ const sections = [
   {
     heading: '8. Whistleblower channel',
     body: [
-      'Employees, distributors, customers and other stakeholders may confidentially report concerns about unethical conduct, regulatory violations or safety lapses by writing to whistleblower@croplandagritech.in. Reports are reviewed by an independent committee and complainants are protected from retaliation.',
+      'Employees, distributors, customers and other stakeholders may confidentially report concerns about unethical conduct, regulatory violations or safety lapses by writing to admin@croplandagritech.com. Reports are reviewed by an independent committee and complainants are protected from retaliation.',
     ],
   },
 ]

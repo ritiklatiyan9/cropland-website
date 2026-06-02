@@ -1,10 +1,12 @@
 import { FaArrowLeft, FaHome } from 'react-icons/fa'
 import Container from '../components/ui/Container.jsx'
 import Button from '../components/ui/Button.jsx'
+import Seo from '../components/Seo.jsx'
 
 export default function NotFound() {
   return (
     <section className="relative isolate overflow-hidden bg-leaf-pattern">
+      <Seo title="Page not found" rawTitle path="/404" noindex />
       <div className="absolute -top-32 right-0 -z-10 h-96 w-96 rounded-full bg-brand-200/40 blur-3xl" aria-hidden="true" />
       <div className="absolute -bottom-32 -left-32 -z-10 h-96 w-96 rounded-full bg-harvest-100/60 blur-3xl" aria-hidden="true" />
       <Container className="relative grid min-h-[60vh] place-items-center py-20 text-center">

@@ -19,6 +19,9 @@ import Reveal from '../components/ui/Reveal.jsx'
 import CountUp from '../components/ui/CountUp.jsx'
 import CtaBanner from '../components/sections/CtaBanner.jsx'
 import { img } from '../data/images.js'
+import Seo from '../components/Seo.jsx'
+import JsonLd from '../components/JsonLd.jsx'
+import { breadcrumbSchema } from '../seo/schema.js'
 
 const stages = [
   {
@@ -106,6 +109,17 @@ const safeguards = [
 export default function Research() {
   return (
     <>
+      <Seo
+        title="Research & Innovation — Formulation Science"
+        description="Inside Cropland Agritech's R&D: molecule discovery, formulation engineering for Indian field conditions, tox/eco-tox review and field trials behind our crop-protection range."
+        path="/research"
+      />
+      <JsonLd
+        data={breadcrumbSchema([
+          { name: 'Home', path: '/' },
+          { name: 'Research', path: '/research' },
+        ])}
+      />
       <section className="relative isolate overflow-hidden bg-ink-900 text-white">
         <img
           src={img.labResearch}

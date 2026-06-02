@@ -46,7 +46,7 @@ const sections = [
   {
     heading: '6. Get involved',
     body: [
-      'If you are an NGO, FPO or research institution working at the intersection of agriculture, soil health, women\'s livelihoods or rural education — we\'d love to hear from you. Write to csr@croplandagritech.in with a brief on your work and the geography you serve.',
+      'If you are an NGO, FPO or research institution working at the intersection of agriculture, soil health, women\'s livelihoods or rural education — we\'d love to hear from you. Write to admin@croplandagritech.com with a brief on your work and the geography you serve.',
     ],
   },
 ]

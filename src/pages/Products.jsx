@@ -12,7 +12,10 @@ import Button from '../components/ui/Button.jsx'
 import Reveal from '../components/ui/Reveal.jsx'
 import ProductCard from '../components/ProductCard.jsx'
 import CtaBanner from '../components/sections/CtaBanner.jsx'
-import { categories, products } from '../data/products.js'
+import { categories, products, slug } from '../data/products.js'
+import Seo from '../components/Seo.jsx'
+import JsonLd from '../components/JsonLd.jsx'
+import { breadcrumbSchema, itemListSchema } from '../seo/schema.js'
 
 export default function Products() {
   const [active, setActive] = useState('all')
@@ -45,13 +48,30 @@ export default function Products() {
 
   return (
     <>
+      <Seo
+        title="Pesticide Products — Insecticides, Herbicides, Fungicides & PGRs"
+        description="Browse Cropland Agritech's CIB&RC-registered range of 60+ insecticides, herbicides, fungicides and plant growth regulators for paddy, sugarcane, cotton, wheat and vegetables. Made in Muzaffarnagar, UP."
+        path="/products"
+        keywords="pesticide products, insecticides, herbicides, fungicides, plant growth regulators, agrochemicals India"
+      />
+      <JsonLd
+        data={[
+          breadcrumbSchema([
+            { name: 'Home', path: '/' },
+            { name: 'Products', path: '/products' },
+          ]),
+          itemListSchema(
+            products.map((p) => ({ name: p.name, path: `/products/${slug(p.code)}` })),
+          ),
+        ]}
+      />
       <section id="catalogue" className="border-b border-brand-100 bg-surface">
         <Container className="py-4 sm:py-5">
           <div className="flex flex-col gap-3 lg:flex-row lg:items-end lg:justify-between">
             <div>
               <span className="text-[11px] font-semibold uppercase tracking-[0.18em] text-brand-700">Catalogue</span>
               <h1 className="mt-1 font-display text-3xl font-bold leading-tight text-ink-900 sm:text-4xl">
-                Products
+                Pesticides &amp; Crop Protection Products
               </h1>
             </div>
             <div className="flex flex-wrap items-center gap-2 text-sm text-ink-600">

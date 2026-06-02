@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom'
 import { FaArrowRight, FaFileAlt } from 'react-icons/fa'
 import Container from './Container.jsx'
+import Seo from '../Seo.jsx'
 
 const legalNav = [
   { to: '/privacy',    label: 'Privacy Policy' },
@@ -12,6 +13,11 @@ const legalNav = [
 export default function LegalPage({ title, updated, intro, sections, activePath }) {
   return (
     <>
+      <Seo
+        title={title}
+        description={intro || `${title} — Cropland Agritech India Pvt. Ltd.`}
+        path={activePath}
+      />
       {/* Header */}
       <section className="relative border-b border-brand-100 bg-surface">
         <Container className="py-14 sm:py-20">
@@ -107,8 +113,8 @@ export default function LegalPage({ title, updated, intro, sections, activePath 
 
                 <div className="mt-12 rounded-2xl bg-brand-50/70 p-5 text-sm text-ink-700">
                   Have a question about this document? Email{' '}
-                  <a href="mailto:compliance@croplandagritech.in" className="font-semibold text-brand-800 hover:underline">
-                    compliance@croplandagritech.in
+                  <a href="mailto:admin@croplandagritech.com" className="font-semibold text-brand-800 hover:underline">
+                    admin@croplandagritech.com
                   </a>{' '}
                   or call <a href="tel:+919760302690" className="font-semibold text-brand-800 hover:underline">+91 97603 02690</a>.
                 </div>
