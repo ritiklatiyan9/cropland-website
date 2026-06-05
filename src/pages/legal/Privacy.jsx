@@ -2,75 +2,109 @@ import LegalPage from '../../components/ui/LegalPage.jsx'
 
 const sections = [
   {
-    heading: '1. Who we are',
+    heading: '1. Introduction',
     body: [
-      'Cropland Agritech India Pvt. Ltd. ("Cropland", "we", "our", "us") manufactures and distributes crop-protection, plant-nutrition and bio-solution products across India and select export markets. This Privacy Policy explains how we collect, use, share and protect personal information when you interact with our website, sales team, distributors or field-agronomy programmes.',
+      'DG Sales ("App", "we", "us", or "our") operates the DG Sales mobile application. This page informs you of our policies regarding the collection, use, and disclosure of personal data when you use our App and the choices you have associated with that data.',
+      'We use your data to provide and improve the App. By using the App, you agree to the collection and use of information in accordance with this policy.',
     ],
   },
   {
-    heading: '2. Information we collect',
+    heading: '2. Information Collection and Use',
     body: [
-      'We collect information that you provide voluntarily, information collected automatically, and information from authorised third parties.',
+      'We collect the following types of information:',
       [
-        'Identity and contact details: name, farm or business name, email, phone, address.',
-        'Enquiry information: crop, location, season, products of interest, technical questions submitted via our forms or sales channels.',
-        'Distributor and dealer information: business credentials, GST and FSSAI numbers, payment details (where applicable).',
-        'Website usage data: pages visited, device type, approximate location and referrer, collected via standard server logs.',
+        'Personal Information: Name, email address, phone number, call records and call logs, location data (when geolocation is enabled), lead and contact information you create or import, and attendance and task records.',
+        'Device Information: Device model, operating system version, unique device identifiers, and app usage statistics.',
+        'Call Data: Inbound/outbound call records, call duration and timestamps, and call logs and history.',
       ],
     ],
   },
   {
-    heading: '3. How we use your information',
+    heading: '2.2 Permissions Used',
     body: [
-      'We use the information we collect to:',
+      'The App requests the following Android permissions:',
       [
-        'Respond to enquiries, sample requests and quotation submissions.',
-        'Provide agronomy guidance, spray calendars and crop advisories.',
-        'Service distributor and dealer accounts including logistics and dispatch.',
-        'Comply with statutory obligations under the Insecticides Act 1968, Fertiliser Control Order 1985 and other applicable laws.',
-        'Improve the safety, efficacy and labelling of our products through aggregated, de-identified usage feedback.',
+        'CALL_PHONE: To enable outbound calling functionality.',
+        'READ_PHONE_STATE: To detect call states and handle incoming calls.',
+        'READ_CALL_LOG: To sync and display call history.',
+        'POST_NOTIFICATIONS: To send reminders, notifications, and call alerts.',
+        'ACCESS_FINE_LOCATION: To track agent location for field sales management.',
+        'ACCESS_COARSE_LOCATION: To provide approximate location data.',
       ],
     ],
   },
   {
-    heading: '4. Lawful bases for processing',
+    heading: '3. Purpose of Data Collection',
     body: [
-      'We process personal information only where we have a lawful basis to do so — typically your consent, the performance of a contract with you, our legitimate business interests, or a statutory obligation. You may withdraw consent at any time by contacting our compliance desk.',
-    ],
-  },
-  {
-    heading: '5. How we share information',
-    body: [
-      'We do not sell personal information. We share information only with:',
+      'We collect and use data for the following purposes:',
       [
-        'Authorised distributors and field representatives, strictly to service your enquiry or order.',
-        'Statutory and regulatory authorities (CIB&RC, state agriculture departments) where legally required.',
-        'Service providers (logistics, payment processing, email delivery) bound by confidentiality and data-protection obligations.',
+        'Service Delivery: To provide, maintain, and improve the App functionality.',
+        'Sales Tracking: To monitor leads, calls, and sales activities.',
+        'Analytics: To understand how the App is used and optimize performance.',
+        'Communication: To send notifications, reminders, and important updates.',
+        'Location Tracking: For field agent location tracking (optional, with consent).',
+        'Legal Compliance: To comply with applicable laws and regulations.',
       ],
     ],
   },
   {
-    heading: '6. Data retention',
+    heading: '4. Data Security',
     body: [
-      'We retain personal information for as long as needed to fulfil the purpose for which it was collected, to meet statutory record-keeping obligations, and to resolve disputes. Sales and distributor records are typically retained for seven (7) years following the end of the business relationship.',
+      'We implement appropriate technical and organizational measures to protect your personal data against unauthorized processing, accidental loss, destruction, or damage. However, no method of transmission over the Internet is 100% secure.',
     ],
   },
   {
-    heading: '7. Your rights',
+    heading: '5. Data Retention',
     body: [
-      'Subject to applicable law, you may request access to, correction of, or deletion of your personal information. You may also object to processing or request a copy of your data in a portable format. Write to our compliance desk at admin@croplandagritech.com.',
+      'We retain your personal data only for as long as necessary to provide the App and fulfill the purposes outlined in this policy. Call logs and activity records are retained according to your account settings and company policies.',
     ],
   },
   {
-    heading: '8. Security',
+    heading: '6. Third-Party Services',
     body: [
-      'We use industry-standard administrative, technical and physical safeguards — including TLS encryption in transit, restricted-access databases, and regular vulnerability assessments — to protect personal information against loss, misuse or unauthorised access.',
+      'The App connects to RiverGreen backend servers for data synchronization. We do not share your personal data with third parties unless:',
+      [
+        'Required by law.',
+        'Necessary to prevent fraud or protect our rights.',
+        'You explicitly consent.',
+      ],
     ],
   },
   {
-    heading: '9. Changes to this policy',
+    heading: '7. User Rights',
     body: [
-      'We may update this Privacy Policy from time to time. Material changes will be posted on this page and, where appropriate, communicated by email. Continued use of our services after an update constitutes acceptance of the revised policy.',
+      'You have the right to:',
+      [
+        'Access your personal data.',
+        'Correct inaccurate data.',
+        'Request deletion of your data.',
+        'Withdraw consent for location tracking.',
+        'Opt-out of non-essential notifications.',
+      ],
+      'To exercise these rights, contact us at support@rivergreen.com',
+    ],
+  },
+  {
+    heading: '8. Children\'s Privacy',
+    body: [
+      'The App is not intended for children under 13. We do not knowingly collect personal data from children under 13. If we become aware of such collection, we will take steps to delete the data promptly.',
+    ],
+  },
+  {
+    heading: '9. Changes to This Policy',
+    body: [
+      'We may update this Privacy Policy from time to time. We will notify you of any changes by updating the "Last Updated" date and posting the new policy within the App.',
+    ],
+  },
+  {
+    heading: '10. Contact Us',
+    body: [
+      'If you have questions or concerns about this Privacy Policy, please contact us at:',
+      [
+        'Email: support@rivergreen.com',
+        'Website: https://www.croplandagritech.com/',
+        'Company: RiverGreen Sales Technologies',
+      ],
     ],
   },
 ]
@@ -79,9 +113,9 @@ export default function Privacy() {
   return (
     <LegalPage
       title="Privacy Policy"
-      updated="15 May 2026"
+      updated="5 June 2026"
       activePath="/privacy"
-      intro="How Cropland Agritech India collects, uses and protects information you share with us through our website, sales channels and field programmes."
+      intro="How DG Sales collects, uses, and protects your personal information when you use our mobile application."
       sections={sections}
     />
   )

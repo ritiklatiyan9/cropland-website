@@ -36,6 +36,7 @@ function App() {
           <Route path="/contact" element={<Contact />} />
           <Route path="/pesticide-company/:citySlug" element={<Location />} />
           <Route path="/privacy" element={<Privacy />} />
+          <Route path="/privacy-policy" element={<Privacy />} />
           <Route path="/terms" element={<Terms />} />
           <Route path="/compliance" element={<Compliance />} />
           <Route path="/csr" element={<Csr />} />
