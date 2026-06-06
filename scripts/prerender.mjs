@@ -27,7 +27,7 @@ const routes = [
   '/research',
   '/about',
   '/contact',
-  '/privacy',
+  '/privacy-policy',
   '/terms',
   '/compliance',
   '/csr',
