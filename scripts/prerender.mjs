@@ -31,6 +31,7 @@ const routes = [
   '/terms',
   '/compliance',
   '/csr',
+  '/delete-account',
   ...locations.map((l) => `/pesticide-company/${l.slug}`),
   ...products.map((p) => `/products/${slug(p.code)}`),
 ]

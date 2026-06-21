@@ -114,7 +114,7 @@ export default function Privacy() {
     <LegalPage
       title="Privacy Policy"
       updated="5 June 2026"
-      activePath="/privacy"
+      activePath="/privacy-policy"
       intro="How DG Sales collects, uses, and protects your personal information when you use our mobile application."
       sections={sections}
     />

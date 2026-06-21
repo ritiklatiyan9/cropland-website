@@ -23,6 +23,7 @@ const staticPaths = [
   '/terms',
   '/compliance',
   '/csr',
+  '/delete-account',
 ]
 
 const locationPaths = locations.map((l) => `/pesticide-company/${l.slug}`)

@@ -42,10 +42,11 @@ const groups = [
   {
     title: 'Legal',
     links: [
-      { label: 'Privacy Policy', to: '/privacy' },
+      { label: 'Privacy Policy', to: '/privacy-policy' },
       { label: 'Terms of Use', to: '/terms' },
       { label: 'Compliance', to: '/compliance' },
       { label: 'CSR', to: '/csr' },
+      { label: 'Delete Account', to: '/delete-account' },
     ],
   },
 ]

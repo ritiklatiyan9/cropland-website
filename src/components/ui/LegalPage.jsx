@@ -4,10 +4,11 @@ import Container from './Container.jsx'
 import Seo from '../Seo.jsx'
 
 const legalNav = [
-  { to: '/privacy',    label: 'Privacy Policy' },
-  { to: '/terms',      label: 'Terms of Use' },
-  { to: '/compliance', label: 'Compliance' },
-  { to: '/csr',        label: 'CSR' },
+  { to: '/privacy-policy', label: 'Privacy Policy' },
+  { to: '/terms',          label: 'Terms of Use' },
+  { to: '/compliance',     label: 'Compliance' },
+  { to: '/csr',            label: 'CSR' },
+  { to: '/delete-account', label: 'Delete Account' },
 ]
 
 export default function LegalPage({ title, updated, intro, sections, activePath }) {

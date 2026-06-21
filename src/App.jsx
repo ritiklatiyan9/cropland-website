@@ -14,6 +14,7 @@ import Privacy from './pages/legal/Privacy.jsx'
 import Terms from './pages/legal/Terms.jsx'
 import Compliance from './pages/legal/Compliance.jsx'
 import Csr from './pages/legal/Csr.jsx'
+import DeleteAccount from './pages/legal/DeleteAccount.jsx'
 
 function App() {
   return (
@@ -40,6 +41,7 @@ function App() {
           <Route path="/terms" element={<Terms />} />
           <Route path="/compliance" element={<Compliance />} />
           <Route path="/csr" element={<Csr />} />
+          <Route path="/delete-account" element={<DeleteAccount />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </main>
